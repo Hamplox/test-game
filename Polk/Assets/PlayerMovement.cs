@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-
+    public int hp = 100;
 	// Use this for initialization
 	void Start () {
 		
@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (false)
+        {
+            hp--;
+        }
 		
 	}
 }

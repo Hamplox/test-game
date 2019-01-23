@@ -13,8 +13,8 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
         if (false)
         {
-            hp--;
+          
         }
-		
-	}
+        Debug.Log("Lol");
+    }
 }

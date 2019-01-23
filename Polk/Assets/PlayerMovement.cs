@@ -16,5 +16,6 @@ public class PlayerMovement : MonoBehaviour {
           
         }
         Debug.Log("Lol");
+        Debug.Log("No re");
     }
 }

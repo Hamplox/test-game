@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     private Vector2 dir;
     public float speed;
+    public int hp = 100;
+    private Rigidbody2D rb;
 	// Use this for initialization
 	void Start () {
-		
+        rb = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -32,5 +34,13 @@ public class PlayerMovement : MonoBehaviour {
             dir = Vector2.zero;
         }
         transform.position = transform.position + (Vector3)(dir * Time.deltaTime * speed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Player")
+        {
+            hp--;
+        }
     }
 }

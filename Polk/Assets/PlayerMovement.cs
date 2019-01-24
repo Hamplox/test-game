@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     private Vector2 dir;
-    public float speed;
+    public float speed = 2;
     public int hp = 100;
+    public int damage = 20;
     private Rigidbody2D rb;
 	// Use this for initialization
 	void Start () {
@@ -41,11 +42,14 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Player")
         {
-            hp--;
+            if (collision.transform.tag == "Player")
+            {
+                hp = hp - damage;
+            }
         }
     }
 }

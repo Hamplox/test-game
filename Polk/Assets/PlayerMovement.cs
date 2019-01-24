@@ -34,7 +34,8 @@ public class PlayerMovement : MonoBehaviour {
         {
             dir = Vector2.zero;
         }
-        transform.position = transform.position + (Vector3)(dir * Time.deltaTime * speed);
+
+        transform.position = transform.position - (Vector3)(dir * Time.deltaTime * speed);
 
         if (hp <= 0)
         {

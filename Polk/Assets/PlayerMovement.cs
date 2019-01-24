@@ -34,18 +34,21 @@ public class PlayerMovement : MonoBehaviour {
         {
             dir = Vector2.zero;
         }
-        transform.position = transform.position + (Vector3)(dir * Time.deltaTime * speed);
+        if (hp <= 0)
+        {
+            Debug.Log("you are dead!");
+        }
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
             if (collision.transform.tag == "Player")
             {
                 hp = hp - damage;
             }
-        
+        Debug.Log("Nej");
         Debug.Log("Your not taking dmg");
     }
 }
